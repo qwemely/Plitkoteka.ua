@@ -1,0 +1,62 @@
+:root{
+  --primary: #6C2D6D;    
+  --accent:  #FFB3C6;      
+  --bg:      #FFF7FB;     
+  --card:    #ffffff;
+  --text:    #222222;
+  --muted:   #6b6b6b;
+  --glass:   rgba(255,255,255,0.6);
+  --border:  #ffffff; 
+  --radius: 12px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, var(--bg) 0%, #FFF 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+
+.topbar{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:18px 20px;
+  background:transparent;
+}
+.brand h1{
+  margin:0;
+  color:var(--primary);
+  letter-spacing:0.2px;
+  font-size:40px;
+}
+.brand .tag{margin:2px 0 0 0;color:var(--muted);font-size:12px}
+
+.tabs{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tab{
+  background:transparent;
+  border:2px solid transparent;
+  padding:8px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+  color:var(--muted);
+  transition:all .15s ease;
+}
+.tab.active{
+  background:linear-gradient(90deg,var(--accent),#ffd6e6);
+  color:var(--primary);
+  box-shadow:0 6px 18px rgba(108,45,109,0.12);
+  transform:translateY(-1px);
+}
+
