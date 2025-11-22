@@ -39,3 +39,107 @@ function openPage(page){
   }
 }
 
+const links = document.querySelectorAll(".main-nav a");
+links.forEach(link => {
+    if (link.href.includes(location.pathname.split('/').pop())) {
+        link.classList.add("active");
+    }
+});
+
+
+
+
+
+if (location.pathname.includes("mystories.html")) {
+    const titleInput = document.getElementById("title");
+    const contentInput = document.getElementById("content");
+
+
+    const saved = JSON.parse(localStorage.getItem("myStory"));
+    if (saved) {
+        titleInput.value = saved.title;
+        contentInput.value = saved.content;
+    }
+
+
+    window.saveStory = function () {
+        const obj = {
+            title: titleInput.value.trim(),
+            content: contentInput.value.trim()
+        };
+        localStorage.setItem("myStory", JSON.stringify(obj));
+        alert("Історію збережено!");
+    };
+
+
+    window.clearStory = function () {
+        titleInput.value = "";
+        contentInput.value = "";
+        localStorage.removeItem("myStory");
+        alert("Очищено!");
+    };
+}
+
+
+
+
+
+
+
+
+if (location.pathname.includes("cart.html")) {
+
+    const qtyInput = document.querySelector(".qty input");
+    const orderBtn = document.querySelector(".btn-order");
+
+
+    qtyInput?.addEventListener("input", () => {
+        localStorage.setItem("cart_qty", qtyInput.value);
+    });
+
+
+    const savedQty = localStorage.getItem("cart_qty");
+    if (savedQty) qtyInput.value = savedQty;
+
+
+    orderBtn?.addEventListener("click", () => {
+        alert("Замовлення оформлено (демо). Реальну оплату можна підключити через LiqPay, Fondy або Stripe.");
+    });
+}
+
+
+
+
+
+
+function addToBookmarks(title) {
+    let list = JSON.parse(localStorage.getItem("fav_stories")) || [];
+    list.push(title);
+    localStorage.setItem("fav_stories", JSON.stringify(list));
+    alert("Додано в закладки!");
+}
+
+
+if (location.pathname.includes("bookmarks.html")) {
+    const favList = document.querySelector(".fav-list");
+    const fav = JSON.parse(localStorage.getItem("fav_stories")) || [];
+
+    if (fav.length === 0) {
+        favList.innerHTML = "<div class='fav'>Немає закладок 🙁</div>";
+    } else {
+        favList.innerHTML = fav
+            .map(item => `<div class="fav">${item}</div>`)
+            .join("");
+    }
+}
+
+
+
+
+
+
+document.body.style.opacity = "0";
+setTimeout(() => {
+    document.body.style.transition = "opacity .4s ease";
+    document.body.style.opacity = "1";
+}, 20);
