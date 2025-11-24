@@ -10,22 +10,24 @@
 <body>
     <header class="topbar">
     <div class="brand">
+      <div class="name">
         <a href="index.html">Plitkoteka.ua</a>
-     
+      </div>
       <p class="tag">Плітки • Історії Онлайн</p>
     </div>
 
-     <nav class="main-nav">
+     <nav class="tabs" role="navigation" aria-label="Основні вкладки">
+      <div class="tab">
         <a href="pop.html">Популярне</a>
         <a href="listen.html">Слухати</a>
         <a href="mystories.html">Мої історії</a>
         <a href="bookmarks.html">Закладки</a>
         <a href="cart.html">Кошик</a>
+      </div>
       </nav>
+    </header>
 
- <main id="app" class="container">
-    <div id="content" class="page"></div>
-  </main>
+
 <div class="plitky">
     <div class="text">
         <h1>Плітки</h1>
@@ -54,7 +56,8 @@
       </div>
     </div>
 
- 
+ <button class="theme-toggle">🌙</button>
+
 
     © <span id="year"></span> Історії Онлайн | Всі права захищено
   </footer>

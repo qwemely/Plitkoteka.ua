@@ -1,35 +1,40 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Plitkoteka — Слухати</title>
-  <link rel="stylesheet" href="listen.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plitkoteka.ua</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="listen.css">
 </head>
 <body>
- <header class="topbar">
+    <header class="topbar">
     <div class="brand">
+      <div class="name">
         <a href="index.html">Plitkoteka.ua</a>
-     
+      </div>
       <p class="tag">Плітки • Історії Онлайн</p>
     </div>
 
-     <nav class="main-nav">
+     <nav class="tabs" role="navigation" aria-label="Основні вкладки">
+      <div class="tab">
         <a href="pop.html">Популярне</a>
         <a href="listen.html">Слухати</a>
         <a href="mystories.html">Мої історії</a>
         <a href="bookmarks.html">Закладки</a>
         <a href="cart.html">Кошик</a>
-      </nav>
-  </header>
+      </div>
+      </nav></header>
+
   <main class="container">
     <h2 class="section-title">Озвучення історій</h2>
 
     <div class="audio-list">
       <div class="audio-item">
-        <h3>Мама мого хлопця вкрала мою каблучку</h3>
-        <p>Короткий опис озвученої історії.</p>
+        <h3>“Я випадково пішла на побачення з братом свого колишнього (і дізналась про це вже в кінці вечора)”</h3>
+        <p>Я познайомилася з хлопцем у додатку знайомств. Здавався милим: дотепний, любить каву, навіть у нас однаковий плейлист на Spotify.
+Домовились зустрітись у кав’ярні....</p>
 
         <audio controls preload="none">
           <source src="audio/story1.mp3" type="audio/mpeg">
@@ -38,8 +43,23 @@
       </div>
 
       <div class="audio-item">
-        <h3>Тато випадково приєднався до жіночого клубу</h3>
-        <p>Опис.</p>
+        <h3> “Як я випадково запустив пожежну сигналізацію в гуртожитку, намагаючись підсмажити хліб на праску”</h3>
+        <p>Перше моє поселення в університет — старий гуртожиток, без кухні на поверсі.
+Я голодний, грошей — нуль, у шафі — лише батон і сир. Думаю: зроблю грінку.
+А праска — є....</p>
+        <audio controls preload="none">
+          <source src="audio/story2.mp3" type="audio/mpeg">
+          Ваш браузер не підтримує відтворення аудіо.
+        </audio>
+      </div>
+
+
+       <div class="audio-item">
+        <h3>“Як мій тато вирішив встановити кондиціонер сам — і майже зробив штучний дощ у квартирі”</h3>
+        <p>Тато — інженер старої школи. Каже:
+
+“Ніяких майстрів, сам зроблю, я це бачив у YouTube.”
+Ну добре....</p>
         <audio controls preload="none">
           <source src="audio/story2.mp3" type="audio/mpeg">
           Ваш браузер не підтримує відтворення аудіо.
@@ -56,9 +76,11 @@
         <a href="#"><img src="phone-flip_9795449.svg" alt="Phone"></a>
       </div>
     </div>
+      
+ <button class="theme-toggle">🌙</button>
+
     © <span id="year"></span> Історії Онлайн | Всі права захищено
   </footer>
-
-  <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
