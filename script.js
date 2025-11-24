@@ -6,12 +6,12 @@ year.textContent = new Date().getFullYear();
 
 let data = null;
 let cart = JSON.parse(localStorage.getItem('plt_cart') || '[]');
-let myStories = JSON.parse(localStorage.getItem('plt_my_stories') || '[]');
+let myStories = JSON.parse(localStorage.getItem('plt_mystories') || '[]');
 
 
 fetch('main.json').then(r=>r.json()).then(json=>{
   data = json;
-  openPage('popular');
+  openPage('pop');
 })
 
 
@@ -24,15 +24,15 @@ tabs.forEach(t=>{
 });
 
 function openPage(page){
-  if(!data && page !== 'my-stories' && page !== 'cart') {
+  if(!data && page !== 'mystories' && page !== 'cart') {
     content.innerHTML = '<div class="card"><p>Завантаження...</p></div>';
     return;
   }
 
   switch(page){
-    case 'popular': renderPopular(); break;
+    case 'pop': renderPopular(); break;
     case 'listen': renderListen(); break;
-    case 'my-stories': renderMyStories(); break;
+    case 'mystories': renderMyStories(); break;
     case 'bookmarks': renderBookmarks(); break;
     case 'cart': renderCart(); break;
     default: content.innerHTML = '<p>Невідома сторінка</p>';
@@ -133,6 +133,22 @@ if (location.pathname.includes("bookmarks.html")) {
     }
 }
 
+const eyes = document.querySelectorAll('.eye');
+document.addEventListener('mousemove', (e) => {
+  const { clientX, clientY } = e;
+  eyes.forEach((eye) => {
+    const rect = eye.getBoundingClientRect();
+    const eyeX = rect.left + rect.width / 2;
+    const eyeY = rect.top + rect.height / 2;
+    const dx = clientX - eyeX;
+    const dy = clientY - eyeY;
+    const angle = Math.atan2(dy, dx);
+    const distance = Math.min(5, Math.hypot(dx, dy) / 20);
+    const x = Math.cos(angle) * distance;
+    const y = Math.sin(angle) * distance;
+    eye.style.transform = `translate(${x}px, ${y}px)`;
+  });
+});
 
 
 
@@ -143,3 +159,25 @@ setTimeout(() => {
     document.body.style.transition = "opacity .4s ease";
     document.body.style.opacity = "1";
 }, 20);
+
+
+const themeBtn = document.querySelector(".theme-toggle");
+
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    if (themeBtn) themeBtn.textContent = "☀️";
+}
+
+themeBtn?.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        themeBtn.textContent = "☀️";
+    } else {
+        localStorage.setItem("theme", "light");
+        themeBtn.textContent = "🌙";
+    }
+});

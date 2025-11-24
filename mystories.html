@@ -1,28 +1,31 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Plitkoteka — Мої історії</title>
-  <link rel="stylesheet" href="mystories.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plitkoteka.ua</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mystories.css">
 </head>
 <body>
-   <header class="topbar">
+    <header class="topbar">
     <div class="brand">
+      <div class="name">
         <a href="index.html">Plitkoteka.ua</a>
-     
+      </div>
       <p class="tag">Плітки • Історії Онлайн</p>
     </div>
 
-     <nav class="main-nav">
+     <nav class="tabs" role="navigation" aria-label="Основні вкладки">
+      <div class="tab">
         <a href="pop.html">Популярне</a>
         <a href="listen.html">Слухати</a>
         <a href="mystories.html">Мої історії</a>
         <a href="bookmarks.html">Закладки</a>
         <a href="cart.html">Кошик</a>
+      </div>
       </nav>
-  </header>
+    </header>
 
   <main class="container">
     <h2 class="section-title">Мої історії</h2>
@@ -30,7 +33,7 @@
     <div class="editor">
       <label for="title">Назва історії</label>
       <input id="title" type="text" placeholder="Введіть назву..." />
-
+    </div>
       <label for="content">Напишіть історію</label>
       <textarea id="content" rows="10" placeholder="Тут можна написати вашу історію..."></textarea>
 
@@ -38,7 +41,7 @@
         <button class="btn-save" onclick="alert('Це демонстраційна сторінка — збереження можна підключити бекенд')">Зберегти</button>
         <button class="btn-clear" onclick="document.getElementById('content').value='';document.getElementById('title').value=''">Очистити</button>
       </div>
-    </div>
+ 
 
   </main>
  <footer class="footer">
@@ -49,8 +52,11 @@
         <a href="#"><img src="phone-flip_9795449.svg" alt="Phone"></a>
       </div>
     </div>
+    
+ <button class="theme-toggle">🌙</button>
+
     © <span id="year"></span> Історії Онлайн | Всі права захищено
   </footer>
-  <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

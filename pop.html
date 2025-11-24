@@ -1,26 +1,35 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plitkoteka.ua</title>
-    <link rel="stylesheet" href="pop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="inndex.css">
 </head>
- <header class="topbar">
+<body>
+    <header class="topbar">
     <div class="brand">
+      <div class="name">
         <a href="index.html">Plitkoteka.ua</a>
-     
+      </div>
       <p class="tag">Плітки • Історії Онлайн</p>
     </div>
 
-     <nav class="main-nav">
+     <nav class="tabs" role="navigation" aria-label="Основні вкладки">
+      <div class="tab">
         <a href="pop.html">Популярне</a>
         <a href="listen.html">Слухати</a>
         <a href="mystories.html">Мої історії</a>
         <a href="bookmarks.html">Закладки</a>
         <a href="cart.html">Кошик</a>
+      </div>
       </nav>
-  </header>
+    </header>
+
+ <main id="app" class="container">
+    <div id="content" class="page"></div>
+  </main>
     <main>
         <h2>Популярні історії</h2>
         <div class="story-list">
@@ -61,9 +70,12 @@
         <a href="#"><img src="phone-flip_9795449.svg" alt="Phone"></a>
       </div>
     </div>
+    
+ <button class="theme-toggle">🌙</button>
+
     © <span id="year"></span> Історії Онлайн | Всі права захищено
   </footer>
-    <script src="main.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
