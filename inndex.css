@@ -23,7 +23,6 @@ body{
   min-height:100vh;
 }
 
-
 .topbar{
   display:flex;
   flex-wrap:wrap;
@@ -67,16 +66,32 @@ body{
  display: flex;
   align-items: flex-start;
   gap: 20px;
+  background-color: #ffb3b349;
+  border-radius: 30px;
 }
+
+.h1{
+  font-size: 70px;
+   font-family: 'Covered By Your Grace', cursive;
+   transition: color 0.5s;
+   text-indent: 120px;
+}
+
+.h1:hover{
+  color: rgb(212, 131, 127);
+}
+
 
 .text {
 flex: 1;
 font-size: 25px;
+text-indent: 20px;
 }
 
 .foto img{
     max-width: 350px;
     height:auto ;
+    border-radius: 20px;
 }
 
 .social-icons {
@@ -104,6 +119,7 @@ font-size: 25px;
   color:var(--muted);
   font-size:13px;
   background:transparent;
+  background-color: #7b5b5b47;
 }
 
 @media (max-width:640px){

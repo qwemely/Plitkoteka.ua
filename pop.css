@@ -43,6 +43,24 @@ body{
 }
 .name a .tag{margin:2px 0 0 0;color:var(--muted);font-size:12px}
 
+.h2{
+  font-size: 50px;
+   font-family: 'Covered By Your Grace', cursive;
+   transition: color 0.5s;
+   text-indent: 200px;
+}
+
+.h2:hover{
+  color: rgb(212, 131, 127);
+}
+
+.container {
+ border-radius: 50px;
+  flex: 1;
+  background-color: #c29e9e51;
+  margin: 90px;
+}
+
 .tabs .tab a {
   padding: 8px 14px;
   text-decoration: none;       
@@ -90,6 +108,8 @@ body{
   color:var(--muted);
   font-size:13px;
   background:transparent;
+   background-color: #7b5b5b47;
+   margin-top: 0px;
 }
 
 @media (max-width:640px){
@@ -106,7 +126,7 @@ body{
 
 .dark {
   --bg: #1e0000;
-  --text: #dab4b4ce;
+  --text: #ac8484;
   --card: #321515b4;
 }
 body {
@@ -115,4 +135,20 @@ body {
 }
 .card, .editor, .audio-item, .cart-panel {
   background: var(--card) !important;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+  margin-bottom: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
 }

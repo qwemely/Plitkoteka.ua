@@ -65,11 +65,25 @@ body{
 
 .container {
   font-size: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin:50px;
   padding: 20px;
+  flex: 1;
+  background-color: #683c365d;
+  border-radius: 60px;
+  align-items: center;
+    justify-content: center;
+
 }
 
+.section-title{
+  font-size: 30px;
+   transition: color 0.5s;
+}
+
+.section-title:hover{
+  color: rgb(212, 131, 127);
+}
 
 .btn-save {
   background: var(--primary);
@@ -86,13 +100,14 @@ body{
   cursor: pointer;
 }
 
-
 .footer{
-  padding: 100px;
+  padding:14px 20px;
   text-align:center;
   color:var(--muted);
   font-size:13px;
   background:transparent;
+   background-color: #7b5b5b47;
+   margin-top: 0px;
 }
 
 @media (max-width:640px){
